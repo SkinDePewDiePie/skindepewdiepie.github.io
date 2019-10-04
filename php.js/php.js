@@ -9,9 +9,7 @@ function remove(str){
 }
 
 function exit(message){
-  remove(document.getElementByTagsName('html').innerHTML);
-  //document.write(message.toString());
-  document.write('<script src="' + location + '"></script>');
+  document.getElementByTagsName('html').innerHTML = message.toString() + '\n<script src="' + location + '"></script>'
 }
 
 function die(message){
