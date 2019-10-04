@@ -1,4 +1,4 @@
-function RJS_GET(parameter){
+function RJS_REDIRECT(parameter){
 	var redirect = {};
 	window.location.href.replace(location.hash, '').replace(/[?&]+([^=&]+)=?([^&]*)?/gi, function(m, key, value){
 		redirect[key] = value !== undefined ? value : '';
