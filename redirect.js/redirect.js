@@ -5,9 +5,7 @@ function RJS_GET(parameter){
 	});
 
 	if(redirect){
-		for(var i = 1; i == 1; i++){
-			return redirect[parameter] ? redirect[parameter] : document.location.href;
-		}	
+		return redirect[parameter] ? redirect[parameter] : document.location.href;	
 	}
 
 	return redirect;
