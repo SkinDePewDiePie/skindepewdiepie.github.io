@@ -12,3 +12,12 @@ function replace(message, replaceStr, string){
   string = string.toString();
   
   message.replace(replaceStr, string);
+}
+
+function isNull(var){
+  if(variable === '' || variable === null || variable === undefined) return;
+}
+
+function setcookie(name, value = "", expires = 0, path = "", domain = "", secure = FALSE, httponly = FALSE){
+  document.cookie = `${name}=${value}; expires=${expires.dUTCToString()}; ${isNull(path)}; ${isNull(domain)}; secure=${secure};`;
+}
