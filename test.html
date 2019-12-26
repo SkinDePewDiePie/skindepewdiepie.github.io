@@ -1,8 +1,45 @@
 <!DOCTYPE html>
 <html>
 <body>
-  Salt
-  <script src="php.js/php.js"></script>
-  <script>echo('\nSalut');</script>
+  <script>
+function echo(message){
+  message = message.toString();
+  if(message.indexOf("\n") !== -1) message.replace("\n", "<br>");
+  document.write(message);
+}
+
+function replace(message, replaceStr, string){
+  message = message.toString();
+  replaceStr = replaceStr.toString();
+  string = string.toString();
+  
+  message.replace(replaceStr, string);
+}
+
+function setCookie(name, value, expires, path, domain, secure, httponly){
+  document.cookie = `${name}=${escape(value)}; ${expires === undefined ? '' : `expires=${expires.toGMTString()};`} ${path === undefined ? '' : `path=${path};`} ${domain === undefined ? '' : `domain=${domain};`} ${secure === undefined ? '' : `secure;`} ${httponly === undefined ? '' : `httpOnly`}`;
+}
+
+function getCookie(name){
+  if(document.cookie.length === 0) return;
+  var cookies = document.cookie.split(new RegExp(';', 'g'));
+
+  for(var i = 0; i < cookies.length; i++){
+  	var content = cookies[i].split(new RegExp('=', 'g'));
+
+  	if(content[0] === name) return unescape(content[1]);
+  }
+
+  return;
+}
+
+	var cookie_expire = new Date();
+
+	cookie_expire.setTime(cookie_expire.getTime() + 3600 * 1000);
+
+	setCookie("sexy", "coucou", cookie_expire, "/", "localhost", true, true);
+
+	echo("Mon cookie à comme valeur: \n" + getCookie("sexy"));
+</script>
 </body>
 </html>
