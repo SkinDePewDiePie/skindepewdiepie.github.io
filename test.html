@@ -17,7 +17,7 @@ function replace(message, replaceStr, string){
 }
 
 function setCookie(name, value, expires, path, domain, secure, httponly){
-  document.cookie = `${name}=${escape(value)}, ${expires === undefined ? '' : `expires=${expires.toGMTString()},`} ${path === undefined ? '' : `path=${path},`} ${domain === undefined ? '' : `domain=${domain},`} ${secure === undefined ? '' : `secure,`} ${httponly === undefined ? '' : `httpOnly`}`;
+  document.cookie = `${name}=${escape(value)}, ${expires === undefined ? '' : `expires=${expires.toUTCString()},`} ${path === undefined ? '' : `path=${path},`} ${domain === undefined ? '' : `domain=${domain},`} ${secure === undefined ? '' : `secure,`} ${httponly === undefined ? '' : `httpOnly`}`;
 }
 
 function getCookie(name){
