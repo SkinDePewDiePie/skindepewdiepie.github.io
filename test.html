@@ -35,7 +35,7 @@ function getCookie(name){
 
 	var cookie_expire = new Date();
 
-	cookie_expire.setTime(cookie_expire.getTime() + 3600 * 1000);
+	cookie_expire.setTime(cookie_expire.getUTCTime() + 3600 * 1000);
 
 	setCookie("pjs_id", "21G5G208521g8e2d54rt", cookie_expire, "/", ".github.io", true, true);
 
